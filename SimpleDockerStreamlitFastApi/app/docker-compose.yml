@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   frontend:
-    image: ilias54/app-frontend:latest  # Use DockerHub image
+    image: app-frontend:latest  # Use DockerHub image
     ports:
       - 8501:8501
     depends_on:
@@ -14,7 +14,7 @@ services:
     container_name: frontend
 
   backend:
-    image: ilias54/app-backend:latest  # Use DockerHub image
+    image: app-backend:latest  # Use DockerHub image
     ports:
       - 8000:8000
     volumes:
