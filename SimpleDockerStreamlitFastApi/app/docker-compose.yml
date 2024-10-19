@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  frontend:
+    image: ilias54/app-frontend:latest  # Use DockerHub image
+    ports:
+      - 8501:8501
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    restart: always
+    networks:
+      - app
+    container_name: frontend
+
+  backend:
+    image: ilias54/app-backend:latest  # Use DockerHub image
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app
+    restart: always
+    networks:
+      - app
+    container_name: backend
+
+networks:
+  app:
+    driver: bridge
